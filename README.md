@@ -21,7 +21,7 @@ URL: **heroku-app-url**
   * [x] Dinner
   * [x] Drinks
 * [ ] User should see at least 5 food items in each section.
-* [ ] Each food item should have the following fields:
+* [x] Each food item should have the following fields:
   * Name (Canh Chua)
   * Description (Delicious fish soup)
   * Price (VND)
@@ -48,7 +48,10 @@ URL: **heroku-app-url**
 
 The following **additional** features are implemented:
 
+* [x] Menu Also has 'Full Menu' Tab
 * [x] Add CSS to make sure google map embed is responsive.
+* [x] Use ActionView helper to format price numbers with delimiter
+* [x] Split string passed to loremflicker to first word only to get better results
 
 The following **known issues**:
 
