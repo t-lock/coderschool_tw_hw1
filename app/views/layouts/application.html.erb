@@ -10,6 +10,12 @@
 
   <body>
     <%= render 'layouts/navbar' %>
+
+    <% if notice %>
+    <div class="alert alert-info">
+      <strong>Cool:</strong> <%= notice %>
+    </div>
+    <% end %>
     <div class="container">
       <%= yield %>
     </div>
