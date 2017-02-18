@@ -48,7 +48,7 @@ URL: **heroku-app-url**
 
 The following **additional** features are implemented:
 
-* [ ] Something nice you added.
+* [x] Add CSS to make sure google map embed is responsive.
 
 The following **known issues**:
 
