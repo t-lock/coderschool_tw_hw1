@@ -9,13 +9,13 @@ class OrdersController < ApplicationController
     @order = @item.orders.build order_params
 
     if @order.save
-      redirect_to menu_path, flash: {:success => "Thanks for your order!"}
+      render 'thank'
     else
       render 'new'
     end
   end
 
   def order_params
-    params.require(:order).permit(:quantity)
+    params.require(:order).permit(:quantity, :name, :phone, :address)
   end
 end

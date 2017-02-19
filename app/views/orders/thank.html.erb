@@ -1,0 +1,50 @@
+<%
+  # calculations
+  item_total = @order.quantity * @item.price
+  order_total = item_total + 20000
+%>
+
+<h1>Thanks for your order, <%= @order.name %></h1>
+
+<div class="card card-block">
+  <h4 class="card-title">Here are your order details:</h4>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th style="text-align:right">Quantity</th>
+        <th style="text-align:right">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @item.name %></td>
+        <td align="right"><%= @order.quantity %></td>
+        <td align="right"><%= number_with_delimiter(item_total, delimiter: ' ') %> VND</td>
+      </tr>
+      <tr>
+        <td>Delivery Fee</td>
+        <td align="right"></td>
+        <td align="right"><%= number_with_delimiter(20000, delimiter: ' ') %> VND</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>Order Total</th>
+        <th style="text-align:right"></th>
+        <th style="text-align:right"><%= number_with_delimiter(order_total, delimiter: ' ') %> VND</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<div>
+  <span>Return to: </span>
+  <%= link_to 'Home', root_path, class: 'btn btn-secondary' %>
+  <%= link_to 'Menu', menu_path, class: 'btn btn-secondary' %>
+</div>
+
+
+
+
+
