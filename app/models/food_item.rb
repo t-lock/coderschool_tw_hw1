@@ -6,4 +6,9 @@ class FoodItem < ApplicationRecord
   def image_url_or_default
     image_url.presence || "http://loremflickr.com/680/480/#{name.split.first}"
   end
+
+
+  def self.search(query)
+    where("name like ?", "%#{query}%")
+  end
 end
