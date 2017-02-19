@@ -6,7 +6,7 @@ Submitted by: **Tim Wheelock**
 
 Time spent: **11.5** hours spent in total
 
-URL: **currently troubleshooting heroku, standby**
+URL: **https://csvn-tw-hw1.herokuapp.com/**
 
 ## User Stories
 
