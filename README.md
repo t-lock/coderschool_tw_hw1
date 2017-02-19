@@ -46,23 +46,27 @@ URL: **https://csvn-tw-hw1.herokuapp.com/**
 * [ ] User receives an email upon placing an order.
 * [ ] The Restaurant (you) receives an email or SMS when a User places an order. Try Twilio if you’d like a SMS API. Use Promo Code CodeSchool15 for $30 free credit.
 
-The following **additional** features are implemented:
+### Additional:
 
 * [x] Menu Also has 'Full Menu' Tab
 * [x] Menu Detail link dynamically loads in modal
 
-It's the **little things**:
+and some **little things**:
 
 * [x] Add CSS to make sure google map embed is responsive.
 * [x] Use ActionView helper to format price numbers with delimiter
 * [x] Split string passed to loremflicker to first word only to get better results **fail: loremflicker is terrible!**
 
-The following **known issues**:
-No real bonus objectives :(
-The UI is straightforward, but there is no real polish/flourish
+## Notes:
 
+### Known issues:
+* No real bonus objectives :(
+* The UI is straightforward with care taken to alignment, readability proportionality, but there is no real polish/flourish
+* Search query is case sensitive
 
-* List bugs or things that don't work yet
+### Things that were challenging
+* Keeping track of the params in url when implementing the search form, adding a hidden input is something that didn't cross my mind but was suggested by a classmate. This is probably a very common technique in working with GET data
+* I originally had a much nicer Full Menu tab, where there were section headings with short tables of items below, but when trying to use the sort forms this got increasingly difficult to handle, and with the deadline fast approaching I ditched the sections so that the view could simply render all @food_items, as defined by the home controller. This ended up possibly being a lesson in keeping the logic in the controller and out of the view, as much as possible.
 
 ## Video Walkthrough
 
@@ -70,11 +74,6 @@ The UI is straightforward, but there is no real polish/flourish
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
-
-## Notes
-
-Describe any challenges encountered while building the app.
 
 ## License
 
