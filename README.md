@@ -66,9 +66,9 @@ The UI is straightforward, but there is no real polish/flourish
 
 ## Video Walkthrough
 
-**Walkthrough coming soon**
+![Video Walkthrough](tw_hw1.gif)
 
-#![Video Walkthrough](path-to-your-GIF-file)
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
