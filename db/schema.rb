@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170219052215) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "food_items", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20170219052215) do
     t.string   "image_url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["section_id"], name: "index_food_items_on_section_id"
+    t.index ["section_id"], name: "index_food_items_on_section_id", using: :btree
   end
 
   create_table "orders", force: :cascade do |t|
@@ -31,14 +34,14 @@ ActiveRecord::Schema.define(version: 20170219052215) do
     t.string   "name"
     t.string   "phone"
     t.text     "address"
-    t.index ["food_item_id"], name: "index_orders_on_food_item_id"
+    t.index ["food_item_id"], name: "index_orders_on_food_item_id", using: :btree
   end
 
   create_table "sections", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_sections_on_name"
+    t.index ["name"], name: "index_sections_on_name", using: :btree
   end
 
 end
