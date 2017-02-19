@@ -4,6 +4,6 @@ class FoodItem < ApplicationRecord
   has_many :orders
 
   def image_url_or_default
-    image_url.presence || "http://loremflickr.com/320/240/#{name.split.first}"
+    image_url.presence || "http://loremflickr.com/680/480/#{name.split.first}"
   end
 end
