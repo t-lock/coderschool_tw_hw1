@@ -23,3 +23,13 @@ img.menu-image {
 table img.menu-image {
   max-width: 100px;
 }
+
+.form-inline {
+  float: right;
+  label {
+    margin: 0 15px;
+  }
+  input[type="submit"] {
+    margin-left: 15px;
+  }
+}
