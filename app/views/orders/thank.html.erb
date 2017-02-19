@@ -36,11 +36,12 @@
       </tr>
     </tfoot>
   </table>
-  <h4 class="card-title">Your order is in being delivered to:</h4>
+  <h4 class="card-title">Your order has been released to the kitchen and will be delivered to:</h4>
   <p><%= @order.name %> (<%= @order.phone %>)</p>
   <p><%= @order.address %></p>
-
-  <h6>Your order was placed at <%= @order.created_at %>, <strong>Please allow at least 30 minutes for delivery</strong></h6>
+  <br>
+  <br>
+  <p>Your order was placed at <%= @order.created_at.strftime("%l:%M%p") %>, <strong>Please allow at least 30 minutes for delivery</strong></p>
 
 </div>
 

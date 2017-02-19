@@ -60,9 +60,9 @@ and some **little things**:
 ## Notes:
 
 ### Known issues:
-* No real bonus objectives :(
-* The UI is straightforward with care taken to alignment, readability proportionality, but there is no real polish/flourish
 * Search query is case sensitive
+* The UI is straightforward with care taken to alignment, readability proportionality, but there is no real polish/flourish
+* The video walkthrough doesn't show human readable time on order confirmation, but that has been added since.
 
 ### Things that were challenging
 * Keeping track of the params in url when implementing the search form, adding a hidden input is something that didn't cross my mind but was suggested by a classmate. This is probably a very common technique in working with GET data
