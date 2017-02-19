@@ -3,24 +3,35 @@
 <% # menu section navigation %>
 <div class="btn-group">
 
-  <%= link_to 'Full Menu', menu_path, class: "btn #{params[:section_id].presence ? 'btn-secondary' : 'btn-primary' }" %>
-
   <% @sections.each do |section| %>
 
     <%= link_to section.name, menu_path(section_id: section.id), class: "btn #{params[:section_id] == section.id.to_s ? 'btn-primary' : 'btn-secondary' }" %>
 
   <% end %>
 
+  <%= link_to 'Full Menu', menu_path, class: "btn #{params[:section_id].presence ? 'btn-secondary' : 'btn-primary' }" %>
+
 </div>
 
-<% if @current_section %>
+      <%= form_tag nil, method: 'get' do %>
+        <div class="form-inline">
+          <% if params[:section_id].present? %>
+            <%= hidden_field_tag :section_id, params[:section_id] %>
+          <% end %>
+          <%= select_tag :sort_column, options_for_select(["name", "price"]), class: 'form-control' %>
+          <%= select_tag :sort_direction, options_for_select(["asc", "desc"]), class: 'form-control' %>
+          <%= submit_tag "Sort", class: 'btn btn-secondary' %>
+        </div>
+      <% end %>
+
+
 
   <% # display menu for selected section %>
   <div class="card card-block">
 
-    <% if @current_section.food_items.count >= 1 %>
+    <% if @food_items.count >= 1 %>
 
-      <% @current_section.food_items.each do |item| %>
+      <% @food_items.each do |item| %>
         <%= render partial: 'modal', locals: {id: item.id, name: item.name, desc: item.description, photo: item.image_url_or_default} %>
       <% end %>
 
@@ -33,7 +44,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @current_section.food_items.each do |item| %>
+          <% @food_items.each do |item| %>
               <tr>
                 <td><%= item.name %></td>
                 <td><%= number_with_delimiter(item.price, delimiter: ' ') %> VND</td>
@@ -47,54 +58,7 @@
 
     <% else %>
 
-      <h5 class="card-title"><%= @current_section %> Menu Coming Soon&hellip; </h5>
+      <h5 class="card-title"><%= @current_section ? @current_section : '' %> Menu Coming Soon&hellip; </h5>
 
     <% end %>
   </div>
-
-<% else %>
-
-  <% # display all menu sections at once if no section selected %>
-  <% @sections.each do |section| %>
-
-    <div class="card card-block">
-
-      <% if section.food_items.count >= 1 %>
-
-        <% section.food_items.each do |item| %>
-          <%= render partial: 'modal', locals: {id: item.id, name: item.name, desc: item.description, photo: item.image_url_or_default} %>
-        <% end %>
-
-        <h5 class="card-title"><%= section.name %></h5>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Price</th>
-              <th>Image</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% section.food_items.each do |item| %>
-              <tr>
-                <td><%= item.name %></td>
-                <td><%= number_with_delimiter(item.price, delimiter: ' ') %> VND</td>
-                <td><%= image_tag item.image_url_or_default, class: 'menu-image' %></td>
-                <td><%= content_tag(:button, 'Show Detail', class: 'btn btn-secondary', :data => {:toggle => 'modal', :target => "#modalId_#{item.id}"}) %></td>
-                <td><%= link_to "Add to Order", new_food_item_order_path(item), class: 'btn btn-secondary' %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-
-      <% else %>
-
-        <h5 class="card-title"><%= section %> Menu Coming Soon&hellip;</h5>
-
-      <% end %>
-
-    </div>
-
-  <% end %>
-
-<% end %>

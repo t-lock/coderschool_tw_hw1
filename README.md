@@ -28,7 +28,7 @@ URL: **heroku-app-url**
   * Section - Breakfast, Lunch, Dinner, Drinks
   * Image URL - do a google search or use LoremFlickr: http://loremflickr.com/320/240/canhchua
 * [x] User should be able to filter by section of Breakfast, Lunch, Dinner, or Drinks and see only the relevant items.
-* [ ] User can sort menu items by “alphabetical”, “price low to high”, and “price high to low”.
+* [x] User can sort menu items by “alphabetical”, “price low to high”, and “price high to low”.
 * [ ] User should be able to search for a menu item and see results.
 * [x] Clicking on an item in the menu brings up its detail, where you see the description and a larger picture.
 * [x] User can click “order” on a menu item to go to a “Create Order” page.
@@ -58,6 +58,8 @@ It's the **little things**:
 * [x] Split string passed to loremflicker to first word only to get better results **fail: loremflicker is terrible!**
 
 The following **known issues**:
+The sorting UI is not very good because of the many tables on full menu. Realistically, I would want to do the sorting client side using something like [stupidtable](https://github.com/joequery/Stupid-Table-Plugin), but for the purpose of this homework, doing the sorting in the backend with rails is the learning opportunity
+
 
 * List bugs or things that don't work yet
 
