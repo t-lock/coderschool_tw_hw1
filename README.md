@@ -4,9 +4,9 @@
 
 Submitted by: **Tim Wheelock**
 
-Time spent: **XX** hours spent in total
+Time spent: **11.5** hours spent in total
 
-URL: **heroku-app-url**
+URL: **currently troubleshooting heroku, standby**
 
 ## User Stories
 
